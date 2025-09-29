@@ -1,26 +1,22 @@
-*,
-*::after {
+html {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-:root {
-  --nav-link-height: 60px;
   --color-link-active: #00acdc;
+  --nav-link-height: 60px;
 }
 
 body {
   color: #000;
+  margin: 0;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   background-color: #fff;
-  padding: 0 50px;
+  padding-left: 50px;
+  padding-right: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -34,13 +30,14 @@ body {
   display: block;
   height: 40px;
   width: 40px;
-  margin: 10px 0;
 }
 
 .nav__list {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__list .nav__list__item + .nav__list__item {
@@ -50,13 +47,14 @@ body {
 .nav__link {
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0;
   font-family: Roboto, Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   height: var(--nav-link-height);
   font-size: 12px;
   line-height: 100%;
-  letter-spacing: 0%;
   text-transform: uppercase;
   color: #000;
   text-decoration: none;
@@ -73,12 +71,16 @@ body {
 }
 
 .nav__link.is-active::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
   content: '';
-  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 4px;
   width: 100%;
   border-radius: 8px;
   background-color: var(--color-link-active);
-  position: absolute;
-  margin-top: 56px;
 }
